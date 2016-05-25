@@ -1,7 +1,7 @@
 <%= link_to "Back to all movies", movies_path %>
 
 <h2>Submit a movie!</h2>
-<%= form_for @movie do |f| %>
+<%= form_for @movie, html: { multipart: true } do |f| %>
 	<div>
 		<%= f.label :title %>
 		<br>
@@ -23,9 +23,9 @@
 		<%= f.number_field :runtime_in_minutes %>
 	</div>
 	<div>
-		<%= f.label :poster_image_url %>
+		<%= f.label :Image %>
 		<br>
-		<%= f.text_field :poster_image_url %>
+		<%= f.file_field :avatar %>
 	</div>
 	<div>
 		<%= f.label :description %>
